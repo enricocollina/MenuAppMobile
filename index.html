@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Menu Settimanale</title>
+</head>
+<body>
+<header><h1>🍽️ Menu Settimanale</h1><p>Organizza ricette, frequenze e pasti</p></header>
+<nav>
+<button data-page="menu" class="active">📅 Menu</button>
+<button data-page="recipes">🍝 Ricette</button>
+<button data-page="tags">🏷️ Tag</button>
+<button data-page="stats">📊 Statistiche</button>
+</nav>
+<main>
+<section id="page-menu" class="page active">
+<div class="toolbar">
+  <div><label>Settimana dal <input type="date" id="weekStart"></label></div>
+  <button class="primary" id="proposeBtn">✨ Proponi menu</button>
+  <button id="clearWeekBtn">🗑️ Svuota settimana</button>
+</div>
+<div class="hint">Puoi modificare manualmente ogni pasto. La proposta considera frequenza mensile, pranzo/cena, pasti già pianificati e ripetizioni recenti.</div>
+<div id="weekGrid"></div>
+</section>
+
+<section id="page-recipes" class="page">
+<div class="toolbar"><input id="recipeSearch" placeholder="🔍 Cerca ricetta"><button class="primary" id="newRecipeBtn">➕ Nuova ricetta</button></div>
+<div id="recipeList"></div>
+</section>
+
+<section id="page-tags" class="page">
+<div class="toolbar"><button class="primary" id="newTagBtn">➕ Nuovo tag</button></div>
+<div id="tagList"></div>
+</section>
+
+<section id="page-stats" class="page">
+<div class="toolbar"><label>Mese <input type="month" id="statsMonth"></label></div>
+<div id="statsList"></div>
+</section>
+</main>
+
+<div id="modal" class="modal hidden"><div class="dialog"><button class="close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
